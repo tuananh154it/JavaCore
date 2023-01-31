@@ -5,4 +5,4 @@ public class bai3 {
         System.out.println("So lon nhat trong 4 so: " + a + ", " + b + ", " + c + ", " + d + " la: " + max);
     }
 }
-//Bài 3: Tìm số lớn nhất trong 4 số biết trước.
+/* Bài 3: Tìm số lớn nhất trong 4 số biết trước. */
