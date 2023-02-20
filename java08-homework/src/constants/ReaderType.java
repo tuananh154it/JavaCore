@@ -9,4 +9,8 @@ public enum ReaderType {
     ReaderType(String readerType) {
         this.readerType = readerType;
     }
+
+    public String getReaderType() {
+        return readerType;
+    }
 }

@@ -10,4 +10,8 @@ public enum Major {
     Major(String major) {
         this.major = major;
     }
+
+    public String getMajor() {
+        return major;
+    }
 }

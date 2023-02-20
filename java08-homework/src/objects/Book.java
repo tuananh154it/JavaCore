@@ -1,5 +1,7 @@
 package objects;
 
+import constants.Major;
+
 import java.util.Scanner;
 
 public class Book {
@@ -29,17 +31,42 @@ public class Book {
         this.bookName = new Scanner(System.in).nextLine();
         System.out.print("Nhập tên tác giả: ");
         this.author = new Scanner(System.in).nextLine();
-        System.out.print("Nhập tên chuyên ngành: ");
-        this.major = new Scanner(System.in).nextLine();
+        System.out.println("Nhập tên chuyên ngành: \n1. Khoa học tự nhiên \n2. Văn học - Nghệ thuật \n3. Điện tử viễn thông \n4. Công nghệ thông tin" );
+        int choose = inputIntegerNumber("Nhập lựa chọn của bạn: ",1,4);
+        switch (choose){
+            case 1:
+                this.major = Major.KHTN.getMajor();
+                break;
+            case 2:
+                this.major = Major.VHNT.getMajor();
+                break;
+
+            case 3:
+                this.major = Major.DTVT.getMajor();
+                break;
+            case 4:
+                this.major = Major.CNTT.getMajor();
+                break;
+        }
         System.out.print("Nhập năm xuất bản: ");
         this.yearOfProduction = new Scanner(System.in).nextInt();
     }
-
+    // method nhập số nguyên có điều kiện
+    private int inputIntegerNumber(String comment,int left,int right){
+        do {
+            System.out.print(comment);
+            int num = new Scanner(System.in).nextInt();
+            if(num >= left && num<=right){
+                return num;
+            }
+            System.out.println("Không hợp lệ, yêu cầu nhập lại !!!");
+        }while (true);
+    }
     public void print() {
         System.out.printf("%-15d", this.bookCode);
         System.out.printf("%-30s", this.bookName);
         System.out.printf("%-20s", this.author);
-        System.out.printf("%-20s", this.major);
+        System.out.printf("%-25s", this.major);
         System.out.printf("%-20d\n", this.yearOfProduction);
     }
 
@@ -79,14 +106,4 @@ public class Book {
         this.yearOfProduction = yearOfProduction;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "bookCode=" + bookCode +
-                ", bookName='" + bookName + '\'' +
-                ", author='" + author + '\'' +
-                ", major='" + major + '\'' +
-                ", yearOfProduction=" + yearOfProduction +
-                '}';
-    }
 }
