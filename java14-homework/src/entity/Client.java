@@ -12,8 +12,7 @@ public class Client extends Person implements Serializable {
 
 
     public Client(){
-        this.clientId = AUTO_ID;
-        AUTO_ID++;
+        this.clientId = AUTO_ID++;
     }
 
     public void inputInfor(){
@@ -46,7 +45,7 @@ public class Client extends Person implements Serializable {
     }
 
     public int getClientId() {
-        return clientId;
+        return this.clientId;
     }
 
     public void setClientId(int clientId) {
@@ -60,6 +59,7 @@ public class Client extends Person implements Serializable {
     public void setClientType(ClientType clientType) {
         this.clientType = clientType;
     }
+
 
     @Override
     public String toString() {

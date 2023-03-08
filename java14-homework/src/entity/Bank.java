@@ -1,8 +1,9 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Bank implements Input{
+public class Bank implements Input, Serializable {
     private static int AUTO_ID = 100;
     private int bankId;
     private String bankName;
